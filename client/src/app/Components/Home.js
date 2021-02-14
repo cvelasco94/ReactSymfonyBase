@@ -8,21 +8,12 @@ import Button from './buttons/Button'
 
 function IndexPage() {
     const [users, setUsers] = useState([]);
-    const [counter, setCounter] = useState(0);
     
     // Functions
     const getUsers = () => {
         axios.get(`http://api.localhost.com/api/getList`).then(users => {
             setUsers(users = users.data)
         })
-    };
-
-    const incrementCounter = () => {
-        setCounter(counter + 1);
-    };
-
-    const decrementCounter = () => {
-        setCounter(counter - 1);
     };
 
     return (
@@ -37,11 +28,6 @@ function IndexPage() {
                     <div className="botones-avaibook">
                         <Button onclickAction={getUsers} buttonId="btnGetUsersList" buttonClass="btn btn-primary" buttonName="Get Users"/>
                     </div>
-                </div>
-                <h1>Counter: {counter}</h1>
-                <div className="botones-avaibook">
-                    <Button onclickAction={incrementCounter} buttonId="btnIncrement" buttonClass="btn btn-primary" buttonName="Increment"/>
-                    <Button onclickAction={decrementCounter} buttonId="btnDecrement" buttonClass="btn btn-primary" buttonName="Decrement"/>
                 </div>
             </div>
         </div>

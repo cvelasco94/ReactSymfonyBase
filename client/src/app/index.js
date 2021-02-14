@@ -8,7 +8,6 @@ import './css/index.css';
 // Import components
 // import Button from './Components/buttons/button';
 import HomePage from './Components/Home';
-import Form from './Components/Form';
 
 function IndexPage() {
     return (
@@ -18,7 +17,6 @@ function IndexPage() {
             <NavBar />
             <Switch>
                 <Route path="/" exact component={HomePage}></Route>
-                <Route path="/form" component={Form}></Route>
                 <Route path="/app" component={ReactPage}></Route>
             </Switch>
         </div>

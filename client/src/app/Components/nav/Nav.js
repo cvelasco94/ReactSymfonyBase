@@ -8,9 +8,6 @@ function Nav () {
                 <h1 className="indexTitle">Hola AvaiBookers</h1>
             </Link>
             <ul>
-                <Link to="/form">
-                    <li>Form with custom hooks</li>
-                </Link>
                 <Link to="/app">
                     <li>Reach Home Page</li>
                 </Link>
