@@ -1,0 +1,56 @@
+version: "2"
+services:
+    www:
+        container_name: react_symfony_www
+        build: ./.docker/web
+        restart: always
+        ports:
+            - "80:80"
+        volumes:
+            - ./.docker/web/hosts:/etc/hosts
+            - ./.docker/web/000-default.conf:/etc/apache2/sites-available/000-default.conf
+            - ./server/:/var/www/html
+        links:
+            - db:db
+        networks:
+            - default
+
+    db:
+        container_name: react_symfony_db
+        build: ./.docker/mariadb
+        restart: always
+        ports:
+            - "3307:3306"
+        volumes:
+            - db-data:/var/lib/mysql
+            - ./server/:/var/www/html
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            TZ: Europe/Madrid
+
+    phpmyadmin:
+        container_name: react_symfony_phpmyadmin
+        image: phpmyadmin/phpmyadmin:latest
+        restart: always
+        environment:
+            PMA_HOSTS: 'db'
+            PMA_USER: 'root'
+        links:
+            - db:db
+        ports:
+            - 81:80
+
+    react:
+        container_name: react_symfony_reactapp
+        image: node:12-alpine
+        volumes: 
+          - ./client/:/app
+        working_dir: /app
+        ports:
+          - 3000:3000
+        restart: always
+        command: npm start
+        tty: true
+
+volumes:
+    db-data:

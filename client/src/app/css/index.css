@@ -1,0 +1,62 @@
+.page-container {
+    min-height: 100vh;
+    background-color: rgb(47, 46, 70);
+    color: #ffffff;
+}
+
+.navBar {
+    border-bottom: 1px solid #ffffff;
+    background-color: #333;
+}
+
+.page-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.indexTitle {
+    color: #ffffff;
+    float: left;
+}
+
+.botones-avaibook {
+    display: inline-flex;
+}
+.botones-avaibook button{
+    background-color: #1f9c23; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+/* Nav Bar */
+.navBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navBar li {
+    float: right;
+}
+
+.navBar li, button {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navBar li:hover {
+    background-color: #111;
+}
