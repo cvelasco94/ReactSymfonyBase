@@ -7,14 +7,14 @@
 .navBar {
     border-bottom: 1px solid #ffffff;
     background-color: #333;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .page-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    padding-top: 100px;
 }
 
 .indexTitle {

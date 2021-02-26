@@ -44,7 +44,7 @@ services:
         container_name: react_symfony_reactapp
         image: node:12-alpine
         volumes: 
-          - ./client/:/app
+          - ./client/:/app:cached
         working_dir: /app
         ports:
           - 3000:3000
